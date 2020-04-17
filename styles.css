@@ -13,7 +13,7 @@ body {
     margin: 0 auto;
 }
 #container > div {
-    background: url(Question.jpg) no-repeat center;
+    background: url(./images/Question.jpg) no-repeat center;
     border: #000 1px solid;
     width: 100px;
     height: 100px;
@@ -23,6 +23,26 @@ body {
     cursor: pointer;
     text-align: center;
 }
+
+button {
+    cursor: pointer;
+    display:inline-block;
+    padding:20px 30px;
+    border-radius:2em;
+    box-sizing: border-box;
+    font-size: large;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:700;
+    color:#FFFFFF;
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s;
+}
+    button:hover {
+    background-color:#4095c6;
+}
+
 /* .box {
     display: inline-block;
     border: solid black 1px;

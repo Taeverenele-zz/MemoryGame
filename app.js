@@ -1,7 +1,7 @@
-let animalArray = ['bear.png', 'deer.png',  'camel.png'];
+let animalArray = ['./images/bear.png', './images/deer.png',  './images/camel.png'];
 
 
-// , 'elephant.png', 'croc.png', 'fox.png', 'hippo.png',  'kangaroo.png', 'lion.png', 'monkey.png',  'moose.png', 'owl.png', 'tiger.png',  'turtle.png', 'wolf.png', 'zebra.png'
+// , './images/elephant.png', './images/croc.png', './images/fox.png', './images/hippo.png',  './images/kangaroo.png', './images/lion.png', './images/monkey.png',  './images/moose.png', './images/owl.png', './images/tiger.png',  './images/turtle.png', './images/wolf.png', './images/zebra.png'
 
 
 // Duplicate array
@@ -64,18 +64,14 @@ function flipTile(tile, val) {
             if (memoryValues[0] === memoryValues[1]) {
                 resetGuesses();
                 if (tilesFlippedIds.length === gameArray.length) {
-                    setTimeout(() => {
-                        alert ('You did it! Play again?');
-                        document.getElementById('container').innerHTML = '';
-                        initGame();
-                    })
+                        createButton();
                 }
             } else {
                 function flipBack() {
                     let tile_1 = document.getElementById(memoryTileIds[0]);
                     let tile_2 = document.getElementById(memoryTileIds[1]);
-                    tile_1.style.background = 'url(Question.jpg) no-repeat center';
-                    tile_2.style.background = 'url(Question.jpg) no-repeat center';
+                    tile_1.style.background = 'url(./images/Question.jpg) no-repeat center';
+                    tile_2.style.background = 'url(./images/Question.jpg) no-repeat center';
                     tilesFlippedIds = tilesFlippedIds.filter(tile => tile !== tile_1.id && tile !== tile_2.id);
                     resetGuesses();
                 }
@@ -86,9 +82,15 @@ function flipTile(tile, val) {
 
 }
 
-// function playAgainScreen() {
-//     container.style.innerHTML = 'Wohoo!';
-// }
+function createButton() {
+    setTimeout(() => {
+        container.innerHTML = '<h2>Well done!</h2><br>';
+        let playAgainButton = document.createElement('button');
+        container.appendChild(playAgainButton);
+        playAgainButton.innerHTML = 'Play again?';
+        playAgainButton.addEventListener('click', initGame);
+    }, 700)
+};
 
 initGame();
 
