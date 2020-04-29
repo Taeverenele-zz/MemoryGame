@@ -1,7 +1,5 @@
-let animalArray = ['./images/bear.png', './images/deer.png',  './images/camel.png'];
+let animalArray = ['./images/bear.png', './images/deer.png',  './images/camel.png', './images/elephant.png', './images/croc.png', './images/fox.png', './images/hippo.png',  './images/kangaroo.png', './images/lion.png', './images/monkey.png',  './images/moose.png', './images/owl.png', './images/tiger.png',  './images/turtle.png', './images/wolf.png', './images/zebra.png'];
 
-
-// , './images/elephant.png', './images/croc.png', './images/fox.png', './images/hippo.png',  './images/kangaroo.png', './images/lion.png', './images/monkey.png',  './images/moose.png', './images/owl.png', './images/tiger.png',  './images/turtle.png', './images/wolf.png', './images/zebra.png'
 
 
 // Duplicate array
