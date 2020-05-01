@@ -1,7 +1,5 @@
 let animalArray = ['./images/bear.png', './images/deer.png',  './images/camel.png', './images/elephant.png', './images/croc.png', './images/fox.png', './images/hippo.png',  './images/kangaroo.png', './images/lion.png', './images/monkey.png',  './images/moose.png', './images/owl.png', './images/tiger.png',  './images/turtle.png', './images/wolf.png', './images/zebra.png'];
 
-
-
 // Duplicate array
 let gameArray = animalArray.concat(animalArray);
 let container = document.getElementById('container');
@@ -11,13 +9,13 @@ let memoryTileIds = [];
 let tilesFlippedIds = [];
 
 // Shuffle array
-function shuffleArray(arr) {
+shuffleArray = (arr) => {
     arr.sort(() => Math.random() - 0.5);
     return arr;
 };
 
 // Create div elements and put them inside 'container' div
-function createDivs() {
+createDivs = () => {
     let output = '';
     for (let i = 0; i < gameArray.length; i++) {
         output += '<div id="tile_' + i +'" onclick="flipTile(this, \'' + gameArray[i] + '\')"></div>';
@@ -26,7 +24,7 @@ function createDivs() {
 }
 
 // Initialise a game with 
-function initGame() {
+initGame = () => {
     //zero cards in tilesFlipped array
     tilesFlippedIds = [];
     // re shuffle all items in gameArray 
@@ -43,7 +41,7 @@ function resetGuesses() {
 
 
 // create a flipTile function (tile = <div> element and val = gameArray item from the array)
-function flipTile(tile, val) {
+flipTile = (tile, val) => {
     // If tilesFlippedIds array already has a tile.id you have just clicked on, ignore this function
     if(tilesFlippedIds.includes(tile.id)) return;
     // otherwise, memoryValues array can never have more that two items in it
@@ -80,7 +78,7 @@ function flipTile(tile, val) {
 
 }
 
-function createButton() {
+createButton = () => {
     setTimeout(() => {
         container.innerHTML = '<h2>Well done!</h2><br>';
         let playAgainButton = document.createElement('button');
